@@ -1,0 +1,131 @@
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Client/ClientMaster.master" AutoEventWireup="false" CodeFile="Payment_confirmation.aspx.vb" Inherits="Client_Payment_confirmation" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+    <!DOCTYPE html>
+    <html lang="zxx">
+
+    <head>
+	    <title>Payment Confirmation | Perfect Transport Pvt. Ltd.</title>
+	    <!-- Meta tag Keywords -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <meta charset="UTF-8" />
+	    <meta name="keywords" content="Transports Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+	    />
+	    <script>
+	        addEventListener("load", function () {
+	            setTimeout(hideURLbar, 0);
+	        }, false);
+
+	        function hideURLbar() {
+	            window.scrollTo(0, 1);
+	        }
+	    </script>
+	    <!--// Meta tag Keywords -->
+
+	    <!-- Custom-Files -->
+	    <link rel="stylesheet" href="css/bootstrap.css" />
+	    <!-- Bootstrap-Core-CSS -->
+	    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" media="all" />
+	    <!-- Owl-Carousel-CSS -->
+	    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	    <!-- Style-CSS -->
+	    <link rel="stylesheet" href="css/fontawesome-all.css" />
+	    <!-- Font-Awesome-Icons-CSS -->
+	    <!-- //Custom-Files -->
+
+	    <!-- Web-Fonts -->
+	    <link href="/../fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
+	        rel="stylesheet">
+	    <link href="/../fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	    <!-- //Web-Fonts -->
+
+    </head>
+
+    <body>
+		    <!-- inner banner -->
+		    <div class="inner-banner text-center text-white">
+			
+		    </div>
+		    <!-- //inner banner -->
+
+                
+	    <!-- contact -->
+        <asp:Button Text="Generate Invoice" OnClick="GenerateInvoicePDF" runat="server" />
+
+        <div class="container py-xl-5 py-lg-3">
+            <form id="Form1" runat="server">
+			    <h3 class="title mb-sm-4 mb-3" style="text-align:center">
+		            <span>O</span>rder <span>H</span>as <span>B</span>een <span>R</span>ecorded
+                </h3>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" HeaderText="Field Required" />
+                <br />
+                <div class="row" style="text-align:center">
+                                                         
+                    <div class="col-lg-4" >
+                        <h3><asp:HyperLink ID="HyperLink1" CssClass="right-w3l" runat="server" NavigateUrl="~/Client/orderhistory.aspx">Order History</asp:HyperLink></h3>
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h3><asp:HyperLink ID="HyperLink3" CssClass="right-w3l" runat="server" NavigateUrl="~/Client/track.aspx">Track Order</asp:HyperLink></h3>    
+                    </div>
+                     <div class="col-lg-4 ">
+                        <h3><asp:HyperLink ID="HyperLink4" CssClass="right-w3l" runat="server" NavigateUrl="~/Client/logout.aspx">Logout</asp:HyperLink></h3>    
+                    </div>
+                </div>
+		    </form>
+        </div>
+
+	    <!-- //contact -->
+
+	    <!-- Js files -->
+	    <!-- JavaScript -->
+	    <script src="js/jquery-3.3.1.min.js"></script>
+	    <!-- Default-JavaScript-File -->
+
+	    <script src="js/bootstrap.js"></script>
+	    <!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	    <!-- search -->
+	    <script src="js/search.js"></script>
+
+	    <!-- smooth scrolling -->
+	    <script src="js/SmoothScroll.min.js"></script>
+	    <!-- //smooth scrolling -->
+
+	    <!-- start-smoth-scrolling -->
+	    <script src="js/move-top.js"></script>
+	    <script src="js/easing.js"></script>
+	    <script>
+	        jQuery(document).ready(function ($) {
+	            $(".scroll").click(function (event) {
+	                event.preventDefault();
+	                $('html,body').animate({
+	                    scrollTop: $(this.hash).offset().top
+	                }, 1000);
+	            });
+	        });
+	    </script>
+	    <!-- start-smoth-scrolling -->
+
+	    <!-- smooth scrolling-bottom-to-top -->
+	    <script>
+	        $(document).ready(function () {
+	            $().UItoTop({
+	                easingType: 'easeOutQuart'
+	            });
+	        });
+	    </script>
+	    <a href="#" id="toTop" style="display: block;">
+		    <span id="toTopHover" style="opacity: 1;"> </span>
+	    </a>
+	    <!-- //smooth scrolling-bottom-to-top -->
+	    <!-- //Js files -->
+
+    </body>
+
+    </html>
+
+
+
+</asp:Content>
+

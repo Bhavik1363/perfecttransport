@@ -1,0 +1,55 @@
+﻿using paytm;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Transport
+{
+public partial class biio : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+    String merchantKey = "m6qCDgusCy#8hAjd";
+    Dictionary<string, string> parameters = new Dictionary<string, string>();
+    parameters.Add ("MID", "VCWVzF34238710753478");
+    parameters.Add("CHANNEL_ID", "WEB");
+    parameters.Add("INDUSTRY_TYPE_ID","Retail");
+    parameters.Add("WEBSITE", "WEBSTAGING");
+    parameters.Add("EMAIL", "bhavik1363@gmail.com");
+    parameters.Add("MOBILE_NO", "9925539271");
+    parameters.Add("CUST_ID", "cust_id_001");
+    parameters.Add("ORDER_ID", "order_id_145");
+    parameters.Add("TXN_AMOUNT","132");
+    parameters.Add("CALLBACK_URL", "https://securegw-stage.paytm.in/order/status"); //This parameter is not mandatory. Use this to pass the callback url dynamically.
+
+    string checksum = CheckSum.generateCheckSum(merchantKey, parameters);
+    string paytmURL = "https://securegw-stage.paytm.in/theia/processTransaction";
+    string outputHTML = "<html>";
+outputHTML += "<head>";
+outputHTML += "<title>Merchant Check Out Page</title>";
+outputHTML += "</head>";
+outputHTML += "<body>";
+outputHTML += "<center><h1>Please do not refresh this page...</h1></center>";
+outputHTML += "<form method='post' action='" + paytmURL + "' name='f1'>";
+outputHTML += "<table border='1'>";
+outputHTML += "<tbody>";
+foreach (string key in parameters.Keys)
+{
+    outputHTML += "<input type='hidden' name='" + key + "' value='" + parameters[key] + "'>";
+}
+outputHTML += "<input type='hidden' name='CHECKSUMHASH' value='" + checksum + "'>";
+outputHTML += "</tbody>";
+outputHTML += "</table>";
+outputHTML += "<script type='text/javascript'>";
+outputHTML += "document.f1.submit();";
+outputHTML += "</script>";
+outputHTML += "</form>";
+outputHTML += "</body>";
+outputHTML += "</html>";
+Response.Write(outputHTML);
+    }
+}
+}

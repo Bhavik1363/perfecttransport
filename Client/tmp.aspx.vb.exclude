@@ -1,0 +1,26 @@
+﻿Imports System.Data.SqlClient
+Imports System.Data
+Imports System
+
+Partial Class Client_tmp
+    Inherits System.Web.UI.Page
+
+    Dim cn As New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\Transport\Client\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30")
+
+    Protected Sub btnBookNow_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookNow.Click
+
+    End Sub
+
+    Protected Sub txtGWeight_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtGWeight.TextChanged
+        If txtGWeight.Text = "" Then
+            lblAmount.Text = ""
+            Label1.Visible = False
+        ElseIf txtGWeight.Text = "0" Then
+            lblAmount.Text = "Enter Valid Weight"
+        Else
+            Label1.Visible = True
+            lblAmount.Text = 50 * Val(txtGWeight.Text)
+        End If
+
+    End Sub
+End Class

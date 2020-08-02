@@ -1,0 +1,82 @@
+﻿Imports System.IO
+Imports System.Text
+Imports System.Data
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports iTextSharp.text.html.simpleparser
+
+Partial Class Client_Payment_confirmation
+    Inherits System.Web.UI.Page
+    Protected Sub GenerateInvoicePDF(sender As Object, e As EventArgs)
+        'Dummy data for Invoice (Bill).
+        Dim companyName As String = "ASPSnippets"
+        Dim orderNo As Integer = 2303
+        Dim dt As New DataTable()
+        dt.Columns.AddRange(New DataColumn(4) {New DataColumn("ProductId", GetType(String)), New DataColumn("Product", GetType(String)), New DataColumn("Price", GetType(Integer)), New DataColumn("Quantity", GetType(Integer)), New DataColumn("Total", GetType(Integer))})
+        dt.Rows.Add(101, "Sun Glasses", 200, 5, 1000)
+        dt.Rows.Add(102, "Jeans", 400, 2, 800)
+        dt.Rows.Add(103, "Trousers", 300, 3, 900)
+        dt.Rows.Add(104, "Shirts", 550, 2, 1100)
+
+        Using sw As New StringWriter()
+            Using hw As New HtmlTextWriter(sw)
+                Dim sb As New StringBuilder()
+
+                'Generate Invoice (Bill) Header.
+                sb.Append("<table width='100%' cellspacing='0' cellpadding='2'>")
+                sb.Append("<tr><td align='center' style='background-color: #18B5F0' colspan = '2'><b>Order Sheet</b></td></tr>")
+                sb.Append("<tr><td colspan = '2'></td></tr>")
+                sb.Append("<tr><td><b>Order No: </b>")
+                sb.Append(orderNo)
+                sb.Append("</td><td align = 'right'><b>Date: </b>")
+                sb.Append(DateTime.Now)
+                sb.Append(" </td></tr>")
+                sb.Append("<tr><td colspan = '2'><b>Company Name: </b>")
+                sb.Append(companyName)
+                sb.Append("</td></tr>")
+                sb.Append("</table>")
+                sb.Append("<br />")
+
+                'Generate Invoice (Bill) Items Grid.
+                sb.Append("<table border = '1'>")
+                sb.Append("<tr>")
+                For Each column As DataColumn In dt.Columns
+                    sb.Append("<th style = 'background-color: #D20B0C;color:#ffffff'>")
+                    sb.Append(column.ColumnName)
+                    sb.Append("</th>")
+                Next
+                sb.Append("</tr>")
+                For Each row As DataRow In dt.Rows
+                    sb.Append("<tr>")
+                    For Each column As DataColumn In dt.Columns
+                        sb.Append("<td>")
+                        sb.Append(row(column))
+                        sb.Append("</td>")
+                    Next
+                    sb.Append("</tr>")
+                Next
+                sb.Append("<tr><td align = 'right' colspan = '")
+                sb.Append(dt.Columns.Count - 1)
+                sb.Append("'>Total</td>")
+                sb.Append("<td>")
+                sb.Append(dt.Compute("sum(Total)", ""))
+                sb.Append("</td>")
+                sb.Append("</tr></table>")
+
+                'Export HTML String as PDF.
+                Dim sr As New StringReader(sb.ToString())
+                Dim pdfDoc As New Document(PageSize.A4, 10.0F, 10.0F, 10.0F, 0.0F)
+                Dim htmlparser As New HTMLWorker(pdfDoc)
+                Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, Response.OutputStream)
+                pdfDoc.Open()
+                htmlparser.Parse(sr)
+                pdfDoc.Close()
+                Response.ContentType = "application/pdf"
+                Response.AddHeader("content-disposition", "attachment;filename=Invoice_" & orderNo & ".pdf")
+                Response.Cache.SetCacheability(HttpCacheability.NoCache)
+                Response.Write(pdfDoc)
+                Response.End()
+            End Using
+        End Using
+    End Sub
+End Class
