@@ -42,7 +42,7 @@ namespace Transport
             {"CUST_ID", "03"},
             {"ORDER_ID", randomorderstring},
             {"TXN_AMOUNT",finalamount},
-            {"CALLBACK_URL", "http://localhost:12546/Client/payment_confirmation.aspx"}, //This parameter is not mandatory. Use this to pass the callback url dynamically.
+            {"CALLBACK_URL", "https://perfectransport.azurewebsites.net/client/payment_confirmation.aspx"}, //This parameter is not mandatory. Use this to pass the callback url dynamically.
         };
             string checksum = CheckSum.generateCheckSum(merchantKey, parameters);
             string paytmURL = "https://securegw-stage.paytm.in/theia/processTransaction";

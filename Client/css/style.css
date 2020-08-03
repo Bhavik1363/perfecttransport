@@ -23,6 +23,16 @@ body a {
     text-decoration: none;
 }
 
+.invoicelink{
+    text-decoration:none;
+    color:yellowgreen;
+}
+
+.invoicelink :hover{
+    color:white;
+    margin:auto;
+}
+
 body a:hover {
     text-decoration: none;
 }
