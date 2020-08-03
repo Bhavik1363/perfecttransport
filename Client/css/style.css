@@ -10,6 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     text-decoration:none !important;
     color:yellow !important;
     font-size: x-large !important;
+	display:none;
 }
 body {
     padding: 0;
