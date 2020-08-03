@@ -24,14 +24,12 @@ body a {
 }
 
 .invoicelink{
-    text-decoration:none;
-    color:yellowgreen;
+    text-decoration:none !important;
+    color:yellowgreen !important;
+    font-size: x-large !important;
 }
 
-.invoicelink :hover{
-    color:white;
-    margin:auto;
-}
+
 
 body a:hover {
     text-decoration: none;
