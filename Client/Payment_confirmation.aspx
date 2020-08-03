@@ -120,7 +120,7 @@
                                 <div class="col-12 contact-grdr-w3l">
 								    <h3 runat="server" id="h1Messasge" class="lead strong"></h3>
                                      <em runat="server" id="pTxnId"></em>
-                                     <a href="GenrateInvoice.aspx" class="invoicelink">Invoice</a>
+                                     <a href="GenrateInvoice.aspx" class="invoicelink">Download Invoice</a>
                                      <em runat="server" id="OrderId"></em>
                                      <em runat="server" id="BID"></em>
 							    </div>
