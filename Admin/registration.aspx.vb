@@ -6,7 +6,7 @@ Imports System.Configuration
 Partial Class Admin_registration
     Inherits System.Web.UI.Page
 
-    Dim cn, cn1 As New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\Transport\Client\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30")
+    Dim cn, cn1 As New SqlConnection("Server=tcp:perfecttransport.database.windows.net,1433;Initial Catalog=Database;Persist Security Info=False;User ID=perfecttranport;Password=Perfect@transport;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
     Dim cmd, cmd1 As New SqlCommand
     Dim qry, qry1 As String
     Dim dr As SqlDataReader

@@ -7,7 +7,7 @@ Partial Class Client_track
 
     Inherits System.Web.UI.Page
 
-    Dim cn As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\Transport\Client\App_Data\Database.mdf;Integrated Security=True"
+    Dim cn As String = "Server=tcp:perfecttransport.database.windows.net,1433;Initial Catalog=Database;Persist Security Info=False;User ID=perfecttranport;Password=Perfect@transport;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
     Dim cmd As New SqlCommand
     Dim qry As String
     Dim dr As SqlDataReader

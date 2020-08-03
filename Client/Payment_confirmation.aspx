@@ -124,7 +124,7 @@
                                      <em runat="server" id="BID"></em>
 							    </div>
 							    <form id="Form1" runat="server">
-                                <asp:Button Text="Generate Invoice" OnClick="GenerateInvoicePDF" runat="server" />
+                                <a href="GenrateInvoice.aspx" >Invoice</a>
                                 </form>
 						    </div>
 						    
