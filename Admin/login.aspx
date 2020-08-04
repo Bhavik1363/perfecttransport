@@ -23,7 +23,7 @@
      <!-- Navigation Bar -->
             <div class="navbar navbar-default navbar-light bg-dark" role="navigation">
                 <a class="navbar-brand" style="color:#2ec8a6" href="index.aspx">
-                    <span><i class="fas fa-truck mr-2"></i></span> Perfect Transport Pvt. Ltd.</a>          
+                    <span><i class="fas fa-truck mr-2"></i></span> Perfect Transport</a>          
             </div>          
             
             <div class="col-12" style="padding: 20px"></div>
