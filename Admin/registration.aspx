@@ -8,7 +8,7 @@
  <head>
 	    <title>Registration | Perfect Transport Pvt. Ltd.</title>
 	    <!-- Meta tag Keywords -->
-	     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	     <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <meta charset="UTF-8"/>
 	    <meta name="keywords" content="Transports Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
 	    <script>
@@ -49,7 +49,7 @@
 		    <!-- //inner banner -->
             <!-- contact -->
         <div class="container py-xl-5 py-lg-3">
-			<h3 class="title mb-sm-4 mb-3" style="text-align:center">
+			<h3 class="title mb-sm-4 mb-3" style="text-align:center; margin-top:16px;">
 		        <span>R</span>egistration <span>F</span>orm
             </h3>
 			    <div class="row">
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="col-lg-7 contact-grid-agiles-w3l">
-                         <div>
+                         <div style="margin:25px">
                          <br />
                                  <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" HeaderText="Field Required" />
                                  <div class="form-group">
