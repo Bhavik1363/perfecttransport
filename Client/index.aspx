@@ -192,7 +192,7 @@
 				    </div>
 				    <div class="col-lg-6">
 					    <div>
-						    <img src="images/m5.jpg" width="665">
+						    <img src="images/m5.jpg" width="665" class="image-fluid img-fluid">
 					    </div>
 				    </div>
 			    </div>
