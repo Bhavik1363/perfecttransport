@@ -109,6 +109,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 .navbar-light .navbar-brand i,
 .w3ls_footer_grid_right h1 a i {
     color: #2ec8a6;
+white-space: pre-wrap;
 }
 
 .navbar-light .navbar-brand:hover,
