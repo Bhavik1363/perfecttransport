@@ -315,7 +315,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 }
 
 .carousel-indicators {
-    bottom: 20px;
+    margin-bottom: 30px;
 }
 
 /*-- //banner --*/
