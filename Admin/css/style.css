@@ -943,9 +943,7 @@ figure.effect-apollo:hover figcaption::before {
 /*-- //typography page --*/
 
 /*-- //inner pages --*/
-a.navbar-brand{
-	white-space: pre-wrap !important;
-}
+
 /*--responsive--*/
 
 @media(max-width: 1680px) {}
