@@ -94,3 +94,7 @@ h1.menutitle span {
 	background: #2ec8a6;
 	color: #fff;
 }
+
+a.navbar-brand{
+	white-space: pre-wrap !important;
+}
