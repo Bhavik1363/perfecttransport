@@ -65,7 +65,7 @@
 
                     <div class="col-lg-7 contact-grid-agiles-w3l">
 					    <div>
-						    <form id="Form1" runat="server"> 
+						    <form id="Form1" runat="server" style="margin:15px"> 
                                 <br/>
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" HeaderText="Field Required" />
 							    <div class="form-group">
